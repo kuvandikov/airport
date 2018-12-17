@@ -14,13 +14,17 @@
 .table-view .column-header .label {
     -fx-highlight-text-fill: #373d3d;
     -fx-text-fill: white;
-    -fx-padding: 16 0 16 0;
+    -fx-padding: 1 0 1 0;
     -fx-text-alignment: center;
 }
 
 .table-column {
     -fx-alignment: center;
     -fx-background-color: darkgray;
+}
+
+.table-row-cell {
+    -fx-table-cell-border-color: darkgray;
 }
 
 
