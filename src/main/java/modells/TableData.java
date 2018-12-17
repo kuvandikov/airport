@@ -1,65 +1,67 @@
 package modells;
 
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * Created by Loving on 15.12.2018.
  */
 public class TableData {
-    private  String Vremya;
-    private  Image Image;
-    private  String Reys;
-    private  String Mashrut;
-    private  String Status;
+    private String time;
+    private ImageView imageView;
+    private String flight;
+    private String destination;
+    private String status;
 
-    public TableData(String s, String s1) {
+    public TableData() {
     }
 
-    public TableData(String vremya, javafx.scene.image.Image image, String reys, String mashrut, String status) {
-        Vremya = vremya;
-        Image = image;
-        Reys = reys;
-        Mashrut = mashrut;
-        Status = status;
+    public TableData(String time, ImageView imageView, String flight, String destination, String status) {
+        this.time = time;
+        imageView.setFitHeight(50);
+        imageView.setFitWidth(220);
+        this.imageView = imageView;
+        this.flight = flight;
+        this.destination = destination;
+        this.status = status;
     }
 
-    public String getVremya() {
-        return Vremya;
+    public String getTime() {
+        return time;
     }
 
-    public void setVremya(String vremya) {
-        Vremya = vremya;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public javafx.scene.image.Image getImage() {
-        return Image;
+    public ImageView getImageView() {
+        return imageView;
     }
 
-    public void setImage(javafx.scene.image.Image image) {
-        Image = image;
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
     }
 
-    public String getReys() {
-        return Reys;
+    public String getFlight() {
+        return flight;
     }
 
-    public void setReys(String reys) {
-        Reys = reys;
+    public void setFlight(String flight) {
+        this.flight = flight;
     }
 
-    public String getMashrut() {
-        return Mashrut;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setMashrut(String mashrut) {
-        Mashrut = mashrut;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 }
