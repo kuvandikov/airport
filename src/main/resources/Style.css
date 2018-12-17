@@ -1,6 +1,7 @@
 .root{
     -fx-background-color: black;
 }
+
 #tableView .column-header{
     -fx-background-color: #373d3d;
     -fx-text-fill: rgb(207,234,254);
@@ -14,5 +15,12 @@
     -fx-highlight-text-fill: #373d3d;
     -fx-text-fill: white;
     -fx-padding: 16 0 16 0;
+    -fx-text-alignment: center;
 }
+
+.table-column {
+    -fx-alignment: center;
+    -fx-background-color: darkgray;
+}
+
 
