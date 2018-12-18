@@ -13,6 +13,7 @@
 }
 .table-view .column-header .label {
     -fx-highlight-text-fill: #373d3d;
+    -fx-font-size: 24px;
     -fx-text-fill: white;
     -fx-padding: 1 0 1 0;
     -fx-text-alignment: center;
