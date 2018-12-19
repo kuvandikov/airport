@@ -39,8 +39,8 @@ public class Controller implements Initializable {
        Status.setCellValueFactory(new PropertyValueFactory<TableData,String>("status"));
         ImageView imageView = new ImageView("img/uzairways_logo.jpg");
 
-        list.add(new TableData("12:09", imageView, "TI 64", "Душанбе", "Atmena"));
-        list.add(new TableData("12:09", imageView, "TI 64", "Душанбе", "Atmena"));
+        list.add(new TableData("12:10", imageView, "TI 6475", "Душанбе", "прибил в 12:15"));
+        list.add(new TableData("14:30", imageView, "РН 2345", "Москва", "по расписанию"));
        tableView.getItems().addAll(list);
     }
 }
