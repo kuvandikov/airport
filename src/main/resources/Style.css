@@ -1,5 +1,6 @@
 .root{
     -fx-background-color: black;
+
  }
 
 #tableView .column-header{
@@ -25,9 +26,11 @@
     -fx-text-fill: rgb(207,234,254);
     -fx-font: bold;
     -fx-alignment: center;
-    -fx-background-color: dimgray;
 }
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+ }
 
-.table-row-cell {
-    -fx-table-cell-border-color: dimgray;
-}
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+ }
