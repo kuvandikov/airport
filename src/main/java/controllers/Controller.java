@@ -45,9 +45,10 @@ public class Controller implements Initializable {
                 list.add(new TableData("14:30", imageView2, "HY 52", "Ташкент", "по расписанию"));
                 tableView.getItems().clear();
                 tableView.getItems().addAll(list);
+                System.out.println("Va va");
 
             }
-        },6001);
+        },5001);
         Vaqt.setCellValueFactory(new PropertyValueFactory<TableData, String>("time"));
         Rasm.setCellValueFactory(new PropertyValueFactory<TableData, ImageView>("imageView"));
         Reys.setCellValueFactory(new PropertyValueFactory<TableData, String>("flight"));
@@ -65,8 +66,8 @@ public class Controller implements Initializable {
         list.add(new TableData("17:05", imageView4, "HY 966", "Санкт-Петербург", "по расписанию"));
         list.add(new TableData("18:50", imageView5, "S7 966", "Москва", "по расписанию"));
         tableView.getItems().addAll(list);
-
     }
+
 
 
 }
