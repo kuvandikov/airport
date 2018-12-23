@@ -18,6 +18,7 @@
                         <TableColumn fx:id="Rasm" prefWidth="162.0" />
                         <TableColumn fx:id="Reys" prefWidth="106.0" text="РЕЙС" />
                         <TableColumn fx:id="Mashrut" prefWidth="175.0" text="МАШРУТ" />
+                        <TableColumn fx:id="Terminal" prefWidth="175.0" text="ТЕРМИНАЛ"/>
                         <TableColumn fx:id="Status" prefWidth="99.0" sortType="DESCENDING" text="СТАТУС" />
                     </columns>
                <columnResizePolicy>

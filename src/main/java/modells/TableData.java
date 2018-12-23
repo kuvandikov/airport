@@ -10,18 +10,20 @@ public class TableData {
     private ImageView imageView;
     private String flight;
     private String destination;
+    private Integer terminal;
     private String status;
 
     public TableData() {
     }
 
-    public TableData(String time, ImageView imageView, String flight, String destination, String status) {
+    public TableData(String time, ImageView imageView, String flight, String destination,Integer terminal, String status) {
         this.time = time;
         imageView.setFitHeight(50);
         imageView.setFitWidth(220);
         this.imageView = imageView;
         this.flight = flight;
         this.destination = destination;
+        this.terminal=terminal;
         this.status = status;
     }
 
@@ -57,9 +59,17 @@ public class TableData {
         this.destination = destination;
     }
 
+    public Integer getTerminal() {
+        return terminal;
+    }
+
+    public void setTerminal(Integer terminal) {
+        this.terminal = terminal;
+    }
     public String getStatus() {
         return status;
     }
+
 
     public void setStatus(String status) {
         this.status = status;

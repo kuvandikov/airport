@@ -27,45 +27,51 @@ public class Controller implements Initializable {
     @FXML
     TableColumn<TableData,String> Mashrut;
     @FXML
+    TableColumn<TableData,Integer> Terminal;
+    @FXML
     TableColumn<TableData,String> Status;
 
 
+//Namuna uchun
+    int cnt;
+    ImageView imageuzairway;
+    ImageView imagenordwind;
+    ImageView imageS7airline;
 
-    List<TableData> list=new ArrayList<TableData>();
+    List<TableData> listuz=new ArrayList<TableData>();
+    List<TableData> listeng=new ArrayList<TableData>();
+    List<TableData> listru=new ArrayList<TableData>();
+
+
+//////
     public void initialize(URL location, ResourceBundle resources) {
-
         timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                ImageView imageView1 = new ImageView("img/uzairways_logo.jpg");
-                ImageView imageView2 = new ImageView("img/uzairways_logo.jpg");
-                list =new ArrayList<TableData>();
-                list.add(new TableData("12:10", imageView1, "HY 615", "Москва", "прибил в 12:15"));
-                list.add(new TableData("14:30", imageView2, "HY 52", "Ташкент", "по расписанию"));
-                tableView.getItems().clear();
-                tableView.getItems().addAll(list);
-                System.out.println("Va va");
-
+                System.out.println("QQQQQQQQQQQQQ");
+                System.out.println(timer.purge());
             }
-        },5001);
+
+        },401);
         Vaqt.setCellValueFactory(new PropertyValueFactory<TableData, String>("time"));
         Rasm.setCellValueFactory(new PropertyValueFactory<TableData, ImageView>("imageView"));
         Reys.setCellValueFactory(new PropertyValueFactory<TableData, String>("flight"));
         Mashrut.setCellValueFactory(new PropertyValueFactory<TableData, String>("destination"));
+        Terminal.setCellValueFactory(new PropertyValueFactory<TableData, Integer>("terminal"));
         Status.setCellValueFactory(new PropertyValueFactory<TableData,String>("status"));
-        ImageView imageView1 = new ImageView("img/uzairways_logo.jpg");
-        ImageView imageView2 = new ImageView("img/uzairways_logo.jpg");
-        ImageView imageView3 = new ImageView("img/nordwind-airlines-logo.png");
-        ImageView imageView4 = new ImageView("img/uzairways_logo.jpg");
-        ImageView imageView5 = new ImageView("img/S7-airline-logo.png");
 
-        list.add(new TableData("12:10", imageView1, "HY 615", "Москва", "прибил в 12:15"));
-        list.add(new TableData("14:30", imageView2, "HY 52", "Ташкент", "по расписанию"));
-        list.add(new TableData("15:40", imageView3, "S7 966", "Ташкент", "по расписанию"));
-        list.add(new TableData("17:05", imageView4, "HY 966", "Санкт-Петербург", "по расписанию"));
-        list.add(new TableData("18:50", imageView5, "S7 966", "Москва", "по расписанию"));
-        tableView.getItems().addAll(list);
+        imageuzairway  = new ImageView("img/uzairways_logo.jpg");
+        imagenordwind  = new ImageView("img/nordwind-airlines-logo.png");
+        imageS7airline = new ImageView("img/S7-airline-logo.png");
+
+//        listru.add(new TableData("12:10", imagenordwind, "HY 615", "Москва",null, "прибил в 12:15"));
+//        listru.add(new TableData("14:30", imageuzairway, "HY 52", "Ташкент", 3,"по расписанию"));
+        listru.add(new TableData("15:40", imageuzairway, "S7 966", "Ташкент",6, "по расписанию"));
+        listru.add(new TableData("17:05", imageS7airline, "HY 966", "Санкт-Петербург",5, "по расписанию"));
+        listru.add(new TableData("18:50", imagenordwind, "S7 966", "Москва", 5,"по расписанию"));
+//        Terminal.setVisible(false);
+        tableView.getItems().addAll(listru);
     }
 
 
