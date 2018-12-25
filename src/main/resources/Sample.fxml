@@ -3,11 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="849.0" styleClass="root" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="849.0" styleClass="root" stylesheets="@Style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.Controller">
     <children>
         <VBox alignment="CENTER" prefHeight="398.0" prefWidth="599.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="47.0" prefWidth="333.0" text="ПРИЛЕТЫ" textFill="WHITE">
+                <Label fx:id="title" alignment="CENTER" contentDisplay="RIGHT" prefHeight="47.0" prefWidth="333.0" text="ПРИЛЕТЫ" textFill="WHITE">
                     <font>
                         <Font name="Times New Roman Bold" size="52" />
                     </font>
@@ -27,7 +27,7 @@
                 </TableView>
                 <HBox alignment="CENTER" prefHeight="75.0" prefWidth="640.0">
                     <children>
-                        <Label prefHeight="42.0" prefWidth="599.0" text="01.02.2018" textFill="WHITE">
+                        <Label prefHeight="42.0" prefWidth="599.0" text="02.01.2019" textFill="WHITE">
                             <font>
                                 <Font name="Times New Roman Bold" size="29.0" />
                             </font>
