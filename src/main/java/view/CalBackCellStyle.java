@@ -8,6 +8,11 @@ import modells.TableData;
 /**
  * Created by Loving on 19.12.2018.
  */
+
+/*
+Status rangini o`zgartirish
+*/
+
 public class CalBackCellStyle {
 
 
@@ -32,6 +37,7 @@ public class CalBackCellStyle {
                                 int index = indexProperty().getValue() < 0 ? 0 : indexProperty().getValue();
                                 String s = param.getTableView().getItems().get(index).getStatus();
                                 s =  s.toLowerCase();
+
                                 if(s.contains("по расписанию") || s.contains("jadval asosida") || s.contains("schedule")){
                                     setStyle("-fx-text-fill: rgb(116,219,127);-fx-effect: dropshadow(three-pass-box, derive(darkgreen, -20%), 10, 0, 4, 4)");
                                 }

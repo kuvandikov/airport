@@ -1,5 +1,6 @@
 package controllers;
 
+import httpRequests.HttpRequests;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -38,7 +39,7 @@ public class Controller implements Initializable {
     @FXML
     TableColumn<TableData,String> Mashrut;
     @FXML
-    TableColumn<TableData,Integer> Terminal;
+    TableColumn<TableData, String> Terminal;
     @FXML
     TableColumn<TableData,String> Status;
 
@@ -56,6 +57,7 @@ public class Controller implements Initializable {
 //////
     public void initialize(URL location, ResourceBundle resources) {
         cnt=0;
+        /*Biror vaqtdan so`ng 3 tildan birsiga o`zgartirib turish*/
         Timeline fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(10), new EventHandler<ActionEvent>() {
 
             @Override
@@ -103,7 +105,7 @@ public class Controller implements Initializable {
         Rasm.setCellValueFactory(new PropertyValueFactory<TableData, ImageView>("imageView"));
         Reys.setCellValueFactory(new PropertyValueFactory<TableData, String>("flight"));
         Mashrut.setCellValueFactory(new PropertyValueFactory<TableData, String>("destination"));
-        Terminal.setCellValueFactory(new PropertyValueFactory<TableData, Integer>("terminal"));
+        Terminal.setCellValueFactory(new PropertyValueFactory<TableData, String>("terminal"));
         Status.setCellValueFactory(new PropertyValueFactory<TableData,String>("status"));
 
         imageuzairway  = new ImageView("img/uzairways_logo.jpg");
@@ -112,21 +114,25 @@ public class Controller implements Initializable {
 
 //        listru.add(new TableData("12:10", imagenordwind, "HY 615", "Москва1",null, "прибил в 12:15"));
 //        listru.add(new TableData("14:30", imageuzairway, "HY 52", "Ташкент", 3,"по расписанию"));
-        listru.add(new TableData("15:40", imageuzairway, "S7 966", "Ташкент",6, "ожидается в 12:25"));
-        listru.add(new TableData("17:05", imageS7airline, "HY 966", "Санкт-Петербург",5, "отменён"));
-        listru.add(new TableData("18:50", imagenordwind, "S7 966", "Москва", 5,"по расписанию"));
+//        listru.add(new TableData("15:40", imageuzairway, "S7 966", "Ташкент","6", "ожидается в 12:25"));
+//        listru.add(new TableData("17:05", imageS7airline, "HY 966", "Санкт-Петербург","5", "отменён"));
+//        listru.add(new TableData("18:50", imagenordwind, "S7 966", "Москва", "5","по расписанию"));
+//
+//        listuz.add(new TableData("15:40", imageuzairway, "S7 966", "Toshkent","6", "16:40 da kutilmoqda"));
+//        listuz.add(new TableData("17:05", imageS7airline, "HY 966", "Sankt-Peterburk","5", "Qoldirildi"));
+//        listuz.add(new TableData("18:50", imagenordwind, "S7 966", "Moskva", "5","Jadval asosida"));
+//
+//        listeng.add(new TableData("15:40", imageuzairway, "S7 966", "Tashkent","6", "expected at 16:40"));
+//        listeng.add(new TableData("17:05", imageS7airline, "HY 966", "Sankt-Peterburk","5", "cancel"));
+//        listeng.add(new TableData("18:50", imagenordwind, "S7 966", "Moscow", "5","scheduled"));
 
-        listuz.add(new TableData("15:40", imageuzairway, "S7 966", "Toshkent",6, "16:40 da kutilmoqda"));
-        listuz.add(new TableData("17:05", imageS7airline, "HY 966", "Sankt-Peterburk",5, "qoldirildi"));
-        listuz.add(new TableData("18:50", imagenordwind, "S7 966", "Moskva", 5,"jadval asosida"));
-
-        listeng.add(new TableData("15:40", imageuzairway, "S7 966", "Tashkent",6, "expected at 16:40"));
-        listeng.add(new TableData("17:05", imageS7airline, "HY 966", "Sankt-Peterburk",5, "cancel"));
-        listeng.add(new TableData("18:50", imagenordwind, "S7 966", "Moscow", 5,"scheduled"));
-        
         CalBackCellStyle cellStyle=new CalBackCellStyle();
         cellStyle.setTableColumn(Status);
-        Terminal.setVisible(true);
+//        Terminal.setVisible(false);
+//        tableView.getItems().addAll(listru);
+        listuz = new HttpRequests().getAll("departure/", 1);
+        listeng = new HttpRequests().getAll("departure/", 2);
+        listru = new HttpRequests().getAll("departure/", 3);
         tableView.getItems().addAll(listru);
 
     }

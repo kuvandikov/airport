@@ -1,0 +1,48 @@
+.root {
+    -fx-background-color: steelblue;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-effect: dropshadow(three-pass-box, derive(white, -20%), 10, 0, 4, 4);
+}
+
+#tableView .column-header {
+    -fx-background-color: steelblue;
+    -fx-text-fill: steelblue;
+}
+
+.table-view .column-header,
+.table-view .column-header-background,
+.table-view {
+    -fx-background-color: steelblue;
+}
+
+.table-view .column-header .label {
+    -fx-highlight-text-fill: #373d3d;
+    -fx-font-size: 24px;
+    -fx-text-fill: black;
+    -fx-padding: 1 0 1 0;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, derive(white, -20%), 10, 0, 4, 4);
+    /*-fx-background-color:darkorange;*/
+}
+
+.table-column {
+    -fx-border-color: -fx-background-color;
+    -fx-font-size: 24px;
+    -fx-text-fill: black;
+    -fx-font: bold;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, derive(white, -20%), 10, 0, 4, 4);
+}
+
+.table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, lightsteelblue;
+    -fx-border-color: lightsteelblue;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -fx-table-cell-border-color, steelblue;
+
+}
