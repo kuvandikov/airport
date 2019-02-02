@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<Pane xmlns:fx="http://javafx.com/fxml" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="250.0" prefWidth="387.0" xmlns="http://javafx.com/javafx"
+      fx:controller="controllers.ControllerMainDialog">
+    <children>
+        <ImageView fitHeight="67.0" fitWidth="263.0" layoutX="74.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/uzairways_logo.jpg"/>
+            </image>
+        </ImageView>
+        <JFXComboBox fx:id="comboBox" value="Departure" layoutX="81.0" layoutY="99.0" prefHeight="40.0"
+                     prefWidth="220.0"/>
+        <JFXButton fx:id="cancel" onAction="#cancel" layoutX="239.0" layoutY="178.0" mnemonicParsing="false"
+                   prefHeight="40.0" prefWidth="90.0" text="Cancel"/>
+        <JFXButton fx:id="ok" onAction="#okClick" layoutX="56.0" layoutY="178.0" mnemonicParsing="false"
+                   prefHeight="40.0" prefWidth="90.0" text="OK"/>
+    </children>
+</Pane>

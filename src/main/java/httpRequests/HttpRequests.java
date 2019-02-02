@@ -1,5 +1,8 @@
 package httpRequests;
 
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import modells.TableData;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -15,10 +18,14 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -85,7 +92,7 @@ public class HttpRequests {
             response = client.execute(get);
             String jsonString = EntityUtils.toString(response.getEntity(), "UTF-8");
             JSONArray jsonArray = new JSONArray(jsonString);
-            if (temp.equals("departure/")) {
+            if (temp.contains("departure/")) {
 
                 for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -93,11 +100,16 @@ public class HttpRequests {
                     TableData tableData = new TableData();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     tableData.setId((long) (i + 1));
-                    tableData.setDataId(jsonObject.getLong("id"));
-                    tableData.setFlight(jsonObject.getString("flight"));
                     tableData.setTime(jsonObject.getString("time"));
                     tableData.setFlight(jsonObject.getString("flight"));
                     tableData.setTerminal(jsonObject.getString("terminal"));
+                    /*------- Rasm get qilish ----------*/
+                    String img = jsonObject.getString("logo");
+                    byte[] dd = Base64.getDecoder().decode(img);
+                    BufferedImage bf = ImageIO.read(new ByteArrayInputStream(dd));
+                    Image img1 = SwingFXUtils.toFXImage(bf, null);
+                    tableData.setImageView(new ImageView(img1));
+                    /*----------------------------------*/
                     if (langId == 1) {
                         tableData.setDestination(jsonObject.getString("destinationUzb"));
                         if (jsonObject.getString("status").equals("schedule")) {
@@ -147,12 +159,9 @@ public class HttpRequests {
 
                     }
 
-
+                    tableDatas.add(tableData);
                     //   tableData.setTime(jsonObject.getString("statusTime"));
                     //  tableData.setTerminal(jsonObject.getString("terminal"));
-                    System.out.println(tableData.getId());
-                    System.out.println(tableData.getTime());
-                    tableDatas.add(tableData);
                 }
 
             } else {
@@ -160,9 +169,20 @@ public class HttpRequests {
                     TableData tableData = new TableData();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     tableData.setId((long) (i + 1));
-                    tableData.setDataId(jsonObject.getLong("id"));
                     tableData.setTime(jsonObject.getString("time"));
                     tableData.setFlight(jsonObject.getString("flight"));
+
+                    System.out.println("Jsoni uzinliqi:" + jsonArray.length());
+
+                    /*------- Rasm get qilish ----------*/
+                    String img = jsonObject.getString("logo");
+                    byte[] dd = Base64.getDecoder().decode(img);
+                    BufferedImage bf = ImageIO.read(new ByteArrayInputStream(dd));
+                    Image img1 = SwingFXUtils.toFXImage(bf, null);
+                    tableData.setImageView(new ImageView(img1));
+                    /*----------------------------------*/
+
+
                     if (langId == 1) {
                         tableData.setDestination(jsonObject.getString("destinationUzb"));
                         if (jsonObject.getString("status").equals("schedule")) {

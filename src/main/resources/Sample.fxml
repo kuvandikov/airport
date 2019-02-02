@@ -3,7 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="849.0" styleClass="root" stylesheets="@Style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.Controller">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="535.0" prefWidth="849.0" styleClass="root" stylesheets="@Style3.css"
+            xmlns="http://javafx.com/javafx" fx:controller="controllers.Controller">
     <children>
         <VBox alignment="CENTER" prefHeight="398.0" prefWidth="599.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -17,7 +19,7 @@
                         <TableColumn fx:id="Vaqt" prefWidth="99.0" text="ВРЕМЯ" />
                         <TableColumn fx:id="Rasm" prefWidth="162.0" />
                         <TableColumn fx:id="Reys" prefWidth="106.0" text="РЕЙС" />
-                        <TableColumn fx:id="Mashrut" prefWidth="175.0" text="МАШРУТ" />
+                        <TableColumn fx:id="Mashrut" prefWidth="175.0" text="МАРШРУТ"/>
                         <TableColumn fx:id="Terminal" prefWidth="175.0" text="ТЕРМИНАЛ"/>
                         <TableColumn fx:id="Status" prefWidth="99.0" sortType="DESCENDING" text="СТАТУС" />
                     </columns>

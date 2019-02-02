@@ -58,6 +58,8 @@ public class TableData {
     }
 
     public void setImageView(ImageView imageView) {
+        imageView.setFitHeight(50);
+        imageView.setFitWidth(220);
         this.imageView = imageView;
     }
 
