@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="535.0" prefWidth="849.0" styleClass="root" stylesheets="@Style3.css"
-            xmlns="http://javafx.com/javafx" fx:controller="controllers.Controller">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="535.0" prefWidth="903.0" styleClass="root" stylesheets="@Style.css"
+            xmlns="http://javafx.com/javafx/8.0.112" fx:controller="controllers.Controller">
     <children>
         <VBox alignment="CENTER" prefHeight="398.0" prefWidth="599.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -29,12 +29,13 @@
                 </TableView>
                 <HBox alignment="CENTER" prefHeight="75.0" prefWidth="640.0">
                     <children>
-                        <Label prefHeight="42.0" prefWidth="599.0" text="02.01.2019" textFill="WHITE">
+                        <Label fx:id="date" prefHeight="42.0" prefWidth="599.0" text="02.01.2019" textFill="WHITE">
                             <font>
                                 <Font name="Times New Roman Bold" size="29.0" />
                             </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="42.0" prefWidth="599.0" text="16:30" textFill="WHITE">
+                        <Label fx:id="time" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="42.0"
+                               prefWidth="599.0" text="16:30" textFill="WHITE">
                             <font>
                                 <Font name="Times New Roman Bold" size="29.0" />
                             </font>

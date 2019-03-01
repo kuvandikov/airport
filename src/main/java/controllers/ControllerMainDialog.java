@@ -2,14 +2,11 @@ package controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXProgressBar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,27 +23,35 @@ public class ControllerMainDialog implements Initializable {
     JFXButton cancel;
     @FXML
     JFXComboBox<String> comboBox;
+    @FXML
+    JFXProgressBar progressBar;
+
+    Controller controller;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         comboBox.getItems().addAll("Departure", "Arrive");
         comboBox.getSelectionModel().select(0);
         comboBox.show();
+        controller = new Controller();
     }
 
     public void okClick(ActionEvent actionEvent) throws IOException {
-        Parent sample = FXMLLoader.load(getClass().getClassLoader().getResource("Sample.fxml"));
-        Scene mainScene = ((JFXButton) actionEvent.getSource()).getParent().getScene();
-        Stage stage = (Stage) mainScene.getWindow();
-        mainScene.setRoot(sample);
-        stage.setMaximized(true);
-        stage.initStyle(StageStyle.UNDECORATED);
-//        primaryStage.setMaximized(true);
-//        primaryStage.initStyle(StageStyle.UNDECORATED);
+        controller.start(comboBox.getSelectionModel().getSelectedIndex());
+        Stage stage = (Stage) ((JFXButton) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
+//        System.out.println(comboBox.getSelectionModel().getSelectedIndex());
+//        Parent sample = FXMLLoader.load(getClass().getClassLoader().getResource("Sample.fxml"));
+//        System.out.println("ha navchun");
+//        Scene mainScene = ((JFXButton) actionEvent.getSource()).getParent().getScene();
+//        Stage stage = (Stage) mainScene.getWindow();
+//        mainScene.setRoot(sample);
+//        stage.setMaximized(true);
 
     }
 
     public void cancel(ActionEvent actionEvent) {
-        System.exit(0);
+        Stage stage = (Stage) ((JFXButton) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

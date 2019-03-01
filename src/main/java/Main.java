@@ -16,9 +16,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("MainDialog.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Tablo.fxml"));
         primaryStage.setScene(new Scene(root));
-//        primaryStage.setMaximized(true);
+        primaryStage.setMaximized(true);
         ///////////////////////////////////////////////
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
