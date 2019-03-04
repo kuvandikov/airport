@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="445.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.112">
     <children>
-        <VBox alignment="CENTER" prefHeight="34.0" prefWidth="650.0">
-            <children>
-                <Label alignment="CENTER" prefHeight="17.0" prefWidth="127.0" text="31.01.2019"/>
-                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="10.0" prefHeight="17.0"
-                       prefWidth="127.0" text="10:02"/>
-            </children>
-        </VBox>
+       <VBox prefHeight="445.0" prefWidth="650.0">
+          <children>
+             <HBox prefHeight="57.0" prefWidth="650.0">
+                <children>
+                   <VBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="287.0">
+                      <children>
+                         <Label alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="304.0" text="Стойка регистрации">
+                            <font>
+                               <Font size="24.0"/>
+                            </font>
+                         </Label>
+                         <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="302.0" text="Эконом-класс">
+                            <font>
+                               <Font size="18.0"/>
+                            </font>
+                         </Label>
+                      </children>
+                   </VBox>
+                   <Label alignment="TOP_CENTER" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" prefHeight="80.0"
+                          prefWidth="78.0" text="1">
+                      <font>
+                         <Font size="48.0"/>
+                      </font>
+                   </Label>
+                   <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="288.0">
+                      <children>
+                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="127.0" text="31.01.2019"/>
+                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="10.0"
+                                prefHeight="17.0" prefWidth="127.0" text="10:02"/>
+                      </children>
+                   </VBox>
+                </children>
+             </HBox>
+             <HBox prefHeight="52.0" prefWidth="650.0">
+                <children>
+                   <VBox alignment="CENTER" prefHeight="52.0" prefWidth="652.0">
+                      <children>
+                         <Label alignment="CENTER_RIGHT" text="Направление рейса">
+                            <font>
+                               <Font size="18.0"/>
+                            </font>
+                         </Label>
+                         <Label layoutX="10.0" layoutY="10.0" text="Москва">
+                            <font>
+                               <Font size="36.0"/>
+                            </font>
+                         </Label>
+                      </children>
+                   </VBox>
+                </children>
+             </HBox>
+             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                <children>
+                   <ImageView fitHeight="72.0" fitWidth="200.0"/>
+                   <Label text="Label"/>
+                </children>
+             </HBox>
+             <HBox prefHeight="100.0" prefWidth="200.0"/>
+             <HBox prefHeight="100.0" prefWidth="200.0"/>
+             <HBox prefHeight="100.0" prefWidth="200.0"/>
+          </children>
+       </VBox>
     </children>
 </AnchorPane>
