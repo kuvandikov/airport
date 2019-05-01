@@ -15,6 +15,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ScrollEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
@@ -36,6 +38,8 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     private static String path;
+    @FXML
+    private AnchorPane pane;
     @FXML
     Label title;
     @FXML
@@ -87,6 +91,26 @@ public class Controller implements Initializable {
 
     //////
     public void initialize(URL location, ResourceBundle resources) {
+
+        final AnimatedZoomOperator zoomOperator = new AnimatedZoomOperator();
+
+
+        pane.setOnScroll(new EventHandler<ScrollEvent>() {
+            @Override
+            public void handle(ScrollEvent event) {
+                double zoomFactor = 4;
+                if (event.getDeltaY() <= 0) {
+                    // zoom out
+                    zoomFactor = 1 / zoomFactor;
+                }
+
+                zoomOperator.zoom(pane, zoomFactor, event.getSceneX(), event.getSceneY());
+            }
+        });
+
+
+
+
         System.out.println("ini: " + path);
         cnt=0;
         localDate = LocalDate.now();

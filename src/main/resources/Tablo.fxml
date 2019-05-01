@@ -1,73 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="445.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.112">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="myPane" alignment="CENTER" prefHeight="509.0" prefWidth="941.0"
+      styleClass="root"
+      stylesheets="@StyleT.css" xmlns="http://javafx.com/javafx/8.0.112"
+      fx:controller="controllers.ControllerTablo">
     <children>
-       <VBox prefHeight="445.0" prefWidth="650.0">
-          <children>
-             <HBox prefHeight="57.0" prefWidth="650.0">
-                <children>
-                   <VBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="287.0">
-                      <children>
-                         <Label alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="304.0" text="Стойка регистрации">
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="650.0">
+            <children>
+                <VBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="425.0">
+                    <children>
+                        <Label fx:id="reg" alignment="TOP_RIGHT" prefHeight="47.0" prefWidth="425.0" styleClass="stoyka"
+                               text="Стойка регистрации">
                             <font>
-                               <Font size="24.0"/>
+                                <Font size="24.0"/>
                             </font>
-                         </Label>
-                         <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="302.0" text="Эконом-класс">
+                        </Label>
+                        <Label fx:id="class" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="302.0"
+                               text="Эконом-класс">
                             <font>
-                               <Font size="18.0"/>
+                                <Font size="18.0"/>
                             </font>
-                         </Label>
-                      </children>
-                   </VBox>
-                   <Label alignment="TOP_CENTER" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" prefHeight="80.0"
-                          prefWidth="78.0" text="1">
-                      <font>
-                         <Font size="48.0"/>
-                      </font>
-                   </Label>
-                   <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="288.0">
-                      <children>
-                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="127.0" text="31.01.2019"/>
-                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="10.0"
-                                prefHeight="17.0" prefWidth="127.0" text="10:02"/>
-                      </children>
-                   </VBox>
-                </children>
-             </HBox>
-             <HBox prefHeight="52.0" prefWidth="650.0">
-                <children>
-                   <VBox alignment="CENTER" prefHeight="52.0" prefWidth="652.0">
-                      <children>
-                         <Label alignment="CENTER_RIGHT" text="Направление рейса">
+                        </Label>
+                    </children>
+                </VBox>
+                <Label fx:id="terminalNum" alignment="TOP_CENTER" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0"
+                       prefHeight="74.0"
+                       prefWidth="103.0" text="1">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Label>
+                <VBox alignment="CENTER_LEFT" prefHeight="74.0" prefWidth="411.0">
+                    <children>
+                        <Label fx:id="date" alignment="CENTER" prefHeight="17.0" prefWidth="127.0" text="31.01.2019">
                             <font>
-                               <Font size="18.0"/>
+                                <Font size="18.0"/>
                             </font>
-                         </Label>
-                         <Label layoutX="10.0" layoutY="10.0" text="Москва">
+                        </Label>
+                        <Label fx:id="time" alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="10.0"
+                               prefHeight="17.0" prefWidth="127.0" text="10:02">
                             <font>
-                               <Font size="36.0"/>
+                                <Font size="18.0"/>
                             </font>
-                         </Label>
-                      </children>
-                   </VBox>
-                </children>
-             </HBox>
-             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                <children>
-                   <ImageView fitHeight="72.0" fitWidth="200.0"/>
-                   <Label text="Label"/>
-                </children>
-             </HBox>
-             <HBox prefHeight="100.0" prefWidth="200.0"/>
-             <HBox prefHeight="100.0" prefWidth="200.0"/>
-             <HBox prefHeight="100.0" prefWidth="200.0"/>
-          </children>
-       </VBox>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="650.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="52.0" prefWidth="652.0">
+                    <children>
+                        <Label fx:id="reys" alignment="CENTER_RIGHT" text="Направление рейса">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="reysName" layoutX="10.0" layoutY="10.0" text="Москва">
+                            <font>
+                                <Font size="36.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0" styleClass="line">
+            <children>
+                <ImageView fx:id="logo" fitHeight="55.0" fitWidth="250.0">
+                    <image>
+                        <Image url="@img/S7-airline-logo.png"/>
+                    </image>
+                </ImageView>
+                <Label fx:id="line" alignment="CENTER" prefHeight="55.0" prefWidth="250.0" styleClass="labelX"
+                       text="KU 567"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+            <children>
+                <Label fx:id="departure" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="Departure">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="departureTime" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="12:08">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+            <children>
+                <Label fx:id="checkClosedAt" alignment="CENTER" styleClass="labelX" prefWidth="250.0"
+                       text="Check-in closed at">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="checkClosedAtTime" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="11:20">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+            <children>
+                <Label fx:id="boardingClosedAt" alignment="CENTER" styleClass="labelX" prefWidth="250.0"
+                       text="Boarding closed at">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="boardingClosedAtTime" alignment="CENTER" styleClass="labelX" prefWidth="250.0"
+                       text="11:40">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+            <children>
+                <Label fx:id="sector" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="Sector">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="sectorName" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="International">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
     </children>
-</AnchorPane>
+</VBox>

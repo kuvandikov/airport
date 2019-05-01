@@ -1,0 +1,29 @@
+.root {
+    -fx-background-color: steelblue;
+    -fx-border-color: black;
+    -fx-border-insets: 5px;
+}
+
+.Vbox {
+    -fx-alignment: center;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, derive(white, -20%), 10, 0, 4, 4);
+}
+
+.stoyka {
+    -fx-font: bold;
+    -fx-font-size: 42px;
+}
+
+.line {
+    -fx-background-color: #4680a0;
+}
+
+.labelX {
+    -fx-font-size: 24px;
+    -fx-border-color: white;
+    -fx-padding: 15dppx;
+}
