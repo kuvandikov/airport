@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="myPane" alignment="CENTER" prefHeight="509.0" prefWidth="941.0"
-      styleClass="root"
-      stylesheets="@StyleT.css" xmlns="http://javafx.com/javafx/8.0.112"
+      styleClass="root" stylesheets="@StyleT.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
       fx:controller="controllers.ControllerTablo">
     <children>
         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="650.0">
@@ -20,17 +20,10 @@
                                 <Font size="24.0"/>
                             </font>
                         </Label>
-                        <Label fx:id="class" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="302.0"
-                               text="Эконом-класс">
-                            <font>
-                                <Font size="18.0"/>
-                            </font>
-                        </Label>
                     </children>
                 </VBox>
                 <Label fx:id="terminalNum" alignment="TOP_CENTER" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0"
-                       prefHeight="74.0"
-                       prefWidth="103.0" text="1">
+                       prefHeight="74.0" prefWidth="103.0" text="1">
                     <font>
                         <Font size="48.0"/>
                     </font>
@@ -76,6 +69,9 @@
                     <image>
                         <Image url="@img/S7-airline-logo.png"/>
                     </image>
+                    <effect>
+                        <Blend mode="RED" opacity="0.49"/>
+                    </effect>
                 </ImageView>
                 <Label fx:id="line" alignment="CENTER" prefHeight="55.0" prefWidth="250.0" styleClass="labelX"
                        text="KU 567"/>
@@ -83,12 +79,12 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
             <children>
-                <Label fx:id="departure" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="Departure">
+                <Label fx:id="departure" alignment="CENTER" prefWidth="250.0" styleClass="labelX" text="Departure">
                     <font>
                         <Font size="24.0"/>
                     </font>
                 </Label>
-                <Label fx:id="departureTime" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="12:08">
+                <Label fx:id="departureTime" alignment="CENTER" prefWidth="250.0" styleClass="labelX" text="12:08">
                     <font>
                         <Font size="24.0"/>
                     </font>
@@ -97,13 +93,13 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
             <children>
-                <Label fx:id="checkClosedAt" alignment="CENTER" styleClass="labelX" prefWidth="250.0"
+                <Label fx:id="checkClosedAt" alignment="CENTER" prefWidth="250.0" styleClass="labelX"
                        text="Check-in closed at">
                     <font>
                         <Font size="24.0"/>
                     </font>
                 </Label>
-                <Label fx:id="checkClosedAtTime" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="11:20">
+                <Label fx:id="checkClosedAtTime" alignment="CENTER" prefWidth="250.0" styleClass="labelX" text="11:20">
                     <font>
                         <Font size="24.0"/>
                     </font>
@@ -112,13 +108,13 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
             <children>
-                <Label fx:id="boardingClosedAt" alignment="CENTER" styleClass="labelX" prefWidth="250.0"
+                <Label fx:id="boardingClosedAt" alignment="CENTER" prefWidth="250.0" styleClass="labelX"
                        text="Boarding closed at">
                     <font>
                         <Font size="24.0"/>
                     </font>
                 </Label>
-                <Label fx:id="boardingClosedAtTime" alignment="CENTER" styleClass="labelX" prefWidth="250.0"
+                <Label fx:id="boardingClosedAtTime" alignment="CENTER" prefWidth="250.0" styleClass="labelX"
                        text="11:40">
                     <font>
                         <Font size="24.0"/>
@@ -128,12 +124,12 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
             <children>
-                <Label fx:id="sector" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="Sector">
+                <Label fx:id="sector" alignment="CENTER" prefWidth="250.0" styleClass="labelX" text="Sector">
                     <font>
                         <Font size="24.0"/>
                     </font>
                 </Label>
-                <Label fx:id="sectorName" alignment="CENTER" styleClass="labelX" prefWidth="250.0" text="International">
+                <Label fx:id="sectorName" alignment="CENTER" prefWidth="250.0" styleClass="labelX" text="International">
                     <font>
                         <Font size="24.0"/>
                     </font>

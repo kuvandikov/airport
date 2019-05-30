@@ -27,17 +27,23 @@ public class ControllerMainDialog implements Initializable {
     JFXProgressBar progressBar;
 
     Controller controller;
+    ControllerTablo controllerTablo;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboBox.getItems().addAll("Departure", "Arrive");
+        comboBox.getItems().addAll("Departure", "Arrive", "Terminal 1", "Terminal 2", "Terminal 3", "Terminal 4", "Terminal 5");
         comboBox.getSelectionModel().select(0);
         comboBox.show();
         controller = new Controller();
+        controllerTablo = new ControllerTablo();
     }
 
     public void okClick(ActionEvent actionEvent) throws IOException {
-        controller.start(comboBox.getSelectionModel().getSelectedIndex());
+        if (comboBox.getSelectionModel().getSelectedIndex() < 2) {
+            controller.start(comboBox.getSelectionModel().getSelectedIndex());
+        } else {
+            controllerTablo.start(comboBox.getSelectionModel().getSelectedIndex());
+        }
         Stage stage = (Stage) ((JFXButton) actionEvent.getSource()).getScene().getWindow();
         stage.close();
 //        System.out.println(comboBox.getSelectionModel().getSelectedIndex());
